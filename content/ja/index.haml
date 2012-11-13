@@ -5,16 +5,5 @@ lang: ja
 
 ---
 
-%header
-  .container
-    %h1#brand= link_to(@site.config[:title], @site.config[:url])
-    
-#products
-  .container
-    %ul
-      %li
-        = link_to('EverDesktop', 'http://everdesktop.com/ja/')
-
-#social
-  .container
-    = fb_likebutton("https://www.facebook.com/littleapps.jp", 850)
+= render 'header_ja'
+= render 'products', :lang => :ja

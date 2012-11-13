@@ -7,6 +7,7 @@ require 'nanoc/helpers/og_tags'
 require 'nanoc/helpers/simple_format'
 require 'nanoc/helpers/youtube'
 require 'nanoc/helpers/facebook'
+require 'nanoc/filters/javascript_concatenator'
 
 include Nanoc::Helpers::Rendering
 include Nanoc::Helpers::LinkTo

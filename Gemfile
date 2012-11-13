@@ -17,4 +17,5 @@ group :development do
   gem 'sass'
   gem 'uglifier'
   gem 'coffee-filter'
+  gem 'nanoc-javascript-concatenator'
 end

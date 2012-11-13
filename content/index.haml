@@ -5,16 +5,5 @@ lang: en
 
 ---
 
-%header
-  .container
-    %h1#brand= link_to(@site.config[:title], @site.config[:url])
-    
-  
-    
-#products
-  .container
-    aaa
-
-#social
-  .container
-    = fb_likebutton("https://www.facebook.com/littleapps.jp", 850)
+= render 'header_en'
+= render 'products', :lang => :en

@@ -17,6 +17,7 @@
   %head
     %meta{:charset =>"utf-8"}
     %meta{:name =>"generator", :content =>"nanoc 3.1.7"}
+    %meta{:name =>'viewport', :content => 'width=device-width, initial-scale=1, maximum-scale=1'}
     %meta{:name =>"description", :content => @description }
     - if @item[:appid]
       %meta{:name =>"apple-itunes-app", :content => "app-id=#{@item[:appid]}" }
@@ -24,11 +25,14 @@
     #{ og_tag(@og) }
     #{ og_tag(@fb) }
     #{ og_tag(@article, :article) }
+    %link{:rel =>"stylesheet", :type => "text/css", :href =>"/stylesheets/bootstrap.css", :media =>"screen"}
     %link{:rel =>"stylesheet", :type => "text/css", :href =>"/stylesheets/screen.css", :media =>"screen"}
-    %link{:rel =>"stylesheet", :type => "text/css", :href =>"//fonts.googleapis.com/css?family=ABeeZee", :media =>"screen"}
+    %link{:rel =>"stylesheet", :type => "text/css", :href =>"//fonts.googleapis.com/css?family=Raleway:400,700", :media =>"screen"}
     %link{:rel => "shortcut icon", :type => "image/x-icon", :href => "//littleapps.s3.amazonaws.com/favicon.ico"}
     - %w{icon icon-72x72 icon-114x114 icon-144x144}.each do |size|
       %link{:rel =>"apple-touch-icon-precomposed", :type =>"image/png", :href =>"//littleapps.s3.amazonaws.com/apple-touch-#{size}-precomposed.png"}
+    %script{:type => "text/javascript", :src => "/javascripts/jquery.js"}
+    %script{:type => "text/javascript", :src => "/javascripts/bootstrap.js"}
     %script{:type => "text/javascript", :src => "/javascripts/app.js"}
   %body
     = fb_root(@locale)

@@ -1,6 +1,40 @@
 ---
+
+alt_lang: /company/
+lang: ja
+
 ---
+
+= render 'header_ja'
 
 #company
   .container
-    %h1 会社概要
+    %table.table.table-bordered
+      %tbody
+        %tr
+          %th 会社名
+          %td 株式会社リトルアプス / LittleApps Inc.
+        %tr
+          %th 代表取締役社長
+          %td= link_to("長瀬 敦史", "http://ngs.io/about/")
+              
+        %tr
+          %th 設立
+          %td
+            2009/03/12
+        %tr
+          %th 住所
+          %td
+            %address
+              〒152-0002 東京都目黒区目黒本町 5-16-9
+        %tr
+          %th Tel
+          %td
+            %address +81-3-3719-7240
+        %tr.email
+          %th E-mail
+          %td
+            %address
+              :coffeescript
+                email = decodeURIComponent "pjDocDsppaelttil04%proc".split("").reverse("").join("").replace(/D/g, ".")
+                document.write "<a href='mailto:\#{email}'>\#{email}</a>"
