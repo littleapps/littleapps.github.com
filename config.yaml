@@ -1,16 +1,26 @@
-description: 'Code anywhere with your iPhone and iPad.'
+description:
+  en: |
+    LittleApps Inc. is a small software house based in Tokyo.
+    We develop mobile, web and desktop applications.
+  ja: |
+    株式会社リトルアプス。
+    東京を拠点にモバイル、ウェブ、ディスクトップアプリケーションを開発する小さなソフトウェアハウスです。
 
-title: 'iGist - The Gist Client'
+title: 'LittleApps Inc.'
+url: 'http://littleapps.jp/'
 
 og:
   image:
-    '': 'http://igist.s3.amazonaws.com/images/icon@2x.png'
-    secure_url: 'https://igist.s3.amazonaws.com/images/icon@2x.png'
-    width: 512
-    height: 512
+    '': 'http://littleapps.s3.amazonaws.com/images/og.png'
+    secure_url: 'https://littleapps.s3.amazonaws.com/images/og.png'
+    width: 500
+    height: 100
     type: 'image/png'
-  url: 'http://igistapp.com/'
+  url: 'http://littleapps.jp/'
   type: article
+
+fb:
+  admins: '1034163350'
 
 # A list of file extensions that nanoc will consider to be textual rather than
 # binary. If an item with an extension not in this list is found,  the file

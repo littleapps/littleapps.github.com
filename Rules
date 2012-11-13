@@ -13,8 +13,14 @@ compile '/stylesheets/_*/' do
 end
 
 compile '/javascripts/*' do
-  filter :coffeescript
+  if item[:extension] == "coffee"
+    filter :coffeescript
+  end
   filter :uglify_js
+end
+
+compile '/javascripts/_*' do
+  # don’t compile partials
 end
 
 compile '*' do
@@ -25,6 +31,10 @@ compile '*' do
 end
 
 route '/stylesheets/_*/' do
+  nil
+end
+
+route '/javascripts/_*/' do
   nil
 end
 
@@ -39,11 +49,9 @@ end
 route '*' do
   if item.raw_filename && item.raw_filename.end_with?('CNAME')
     '/CNAME'
-  elsif item.binary?
-    # Write item with identifier /foo/ to /foo.ext
+  elsif item.binary? || item[:extension] == "html"
     item.identifier.chop + '.' + item[:extension]
   else
-    # Write item with identifier /foo/ to /foo/index.html
     item.identifier + 'index.html'
   end
 end

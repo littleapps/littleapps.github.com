@@ -1,112 +1,75 @@
 @import compass
+@import bootstrap
 
-body
-  background: #eee
-  font-family: 'ABeeZee', sans-serif
-  margin: 0
+$linkColor: #f39
 
-a
-  color: #fd7e08
-  text-decoration: none
-  +transition-property(color)
-  +transition-duration(0.1s)
-  &:hover
-    color: #fdaf08
+html
+  body
+    background: #eee
+    font-family: 'ABeeZee', sans-serif
+    margin: 0
+  a
+    color: $linkColor
+    text-decoration: none
+    +transition-property(color)
+    +transition-duration(0.1s)
+    &:hover
+      text-decoration: none
+      color: darken($linkColor, 20%)
 
 #main
   background: #fff
-  +clearfix
-
-.container
-  width: 850px
-  padding: 0 50px
-  margin: 0 auto
-  position: relative
   +clearfix
 
 .appicon
   display: inline-block
   +border-radius(15%)
   +box-shadow(rgba(black, 0.5) 0 1px 10px)
+  
+.appstore
+  +transition-property(opacity)
+  +transition-duration(0.5s)
+  +opacity(0.8)
+  background: url(//littleapps.s3.amazonaws.com/images/appstore.png) no-repeat 0 0
+  @media only screen and (-webkit-min-device-pixel-ratio: 2),(-webkit-min-device-pixel-ratio: 1.5)
+    background-image: url(//littleapps.s3.amazonaws.com/images/appstore@2x.png)
+  background-size: 150px 45px
+  display: block
+  width: 150px
+  height: 45px
+  font-size: 1px
+  text-indent: -9999px
+  &.macappstore
+    background-image: url(//littleapps.s3.amazonaws.com/images/macappstore@2x.png)
+    @media only screen and (-webkit-min-device-pixel-ratio: 2),(-webkit-min-device-pixel-ratio: 1.5)
+      background-image: url(//littleapps.s3.amazonaws.com/images/macappstore@2x.png)
+  &:hover
+    +opacity(1.0)
 
 header
   .container
-    height: 306px
     position: relative
-    .appicon
-      float: left
-      position: absolute
-      top: 55px
-      left: 35px
+    padding: 30px 0
 
     h1
-      padding: 80px 0 0 196px
-      margin: 0
-      +single-text-shadow(0, 0, 5px, false, #aaa)
-    h2
-      padding: 10px 0 0 196px
-      margin: 0
-      color: #888
-      font-size: 1.2em
-      font-weight: normal
-      +single-text-shadow(0, 0, 5px, false, #ccc)
-
-    #appstore
-      padding: 25px 0 0 196px
       margin: 0
       a
-        +transition-property(opacity)
-        +transition-duration(0.5s)
-        +opacity(0.8)
-        background: url(//igist.s3.amazonaws.com/images/appstore.png) no-repeat 0 0
-        @media only screen and (-webkit-min-device-pixel-ratio: 2),(-webkit-min-device-pixel-ratio: 1.5)
-          background-image: url(//igist.s3.amazonaws.com/images/appstore@2x.png)
-        background-size: 150px 45px
         display: block
-        width: 150px
-        height: 45px
+        background: url(//littleapps.s3.amazonaws.com/images/littleapps.png) no-repeat 0 0
+        @media only screen and (-webkit-min-device-pixel-ratio: 2),(-webkit-min-device-pixel-ratio: 1.5)
+          background-image: url(//littleapps.s3.amazonaws.com/images/littleapps@2x.png)
+        background-size: 283px 22px
+        width: 283px
+        height: 22px
         font-size: 1px
         text-indent: -9999px
-        &:hover
-          +opacity(1.0)
-
-#how-it-works, #bitbucket
-  padding-bottom: 5em
-  float: left
-  width: 48%
-  li
-    padding-bottom: 0.5em
-
-.icon-bug
-  display: inline-block
-  width: 11px
-  height: 12px
-  background: url(//igist.s3.amazonaws.com/images/icon-bug.png) repeat 0 0
-  background-size: 11px 23px
-  a:hover &
-    background-position: 0 -100%
-  @media only screen and (-webkit-min-device-pixel-ratio: 2),(-webkit-min-device-pixel-ratio: 1.5)
-    background-image: url(//igist.s3.amazonaws.com/images/icon-bug@2x.png)
-
-#screen
-  .container
-    position: relative
-    height: 726px
-    background: url(//igist.s3.amazonaws.com/images/ipad.png) no-repeat 30px 0
-    background-size: 850px 666px
-    @media only screen and (-webkit-min-device-pixel-ratio: 2),(-webkit-min-device-pixel-ratio: 1.5)
-      background-image: url(//igist.s3.amazonaws.com/images/ipad@2x.png)
-    .screen-wrap
+      
+    h2
       margin: 0
-      width: 692px
-      height: 519px
-      background: url(//igist.s3.amazonaws.com/images/poster.png) no-repeat 0 0
-      background-size: 692px 519px
-      @media only screen and (-webkit-min-device-pixel-ratio: 2),(-webkit-min-device-pixel-ratio: 1.5)
-        background-image: url(//igist.s3.amazonaws.com/images/poster@2x.png)
-      position: relative
-      top: 68px
-      left: 60px
+      color: #888
+      font-size: 1em
+      font-weight: normal
+      +single-text-shadow(0, 0, 5px, false, #ccc)
 
 footer
   padding: 3em 0
@@ -132,8 +95,6 @@ footer
         font-style: normal
       &.ja
         margin-top: -0.1em
-  .mixpanel
-    float: right
   .brand
     margin: 0
     padding-bottom: 10px

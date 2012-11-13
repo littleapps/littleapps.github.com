@@ -1,34 +1,20 @@
 ---
+
+alt_lang: /ja/
+lang: en
+
 ---
 
 %header
   .container
-    %img.appicon{ :src => 'http://igist.s3.amazonaws.com/icons/icon-512@2x.png', :width => 190, :height => 190 }
-    %h1#brand #{@site.config[:title]}
-    %h2#subtitle #{ @site.config[:description] }
-    %p#appstore
-      = link_to('Available on the Mac App Store', 'https://itunes.apple.com/app/id517109617?l=en&mt=8')
-
-#screen
+    %h1#brand= link_to(@site.config[:title], @site.config[:url])
+    
+  
+    
+#products
   .container
-    .screen-wrap
-      :coffeescript
-        document.write videoHTML()
+    aaa
 
-.container
-  #how-it-works
-    %h2 How it works
-    %ul
-      %li Login using GitHub's OAuth screen.
-      %li Browse Public, Starred and Your Gists.
-      %li Create, Edit, Delete and Fork Gists.
-
-  #bitbucket
-    %h2 Found bugs? Feature requests?
-    %p
-      Feel free to report problems or request features.
-    %p
-      = link_to('<i class="icon-bug"></i> Create an issue on our GitHub project.', 'https://github.com/igist/igist.github.com/issues')
 #social
   .container
-    = fb_likebutton('http://igistapp.com/')
+    = fb_likebutton("https://www.facebook.com/littleapps.jp", 850)

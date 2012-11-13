@@ -1,3 +1,7 @@
+###
+//= require _bootstrap
+###
+
 window.videoHTML = ->
   if /iP(ad|hone)/.test(navigator.userAgent)
     attr = 'controls'
