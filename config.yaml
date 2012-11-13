@@ -8,6 +8,7 @@ description:
 
 title: 'LittleApps Inc.'
 url: 'http://littleapps.jp/'
+base_url: 'http://littleapps.jp/'
 
 og:
   image:

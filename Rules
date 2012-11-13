@@ -29,7 +29,9 @@ end
 compile '*' do
   unless item.binary?
     filter :haml
-    layout 'default'
+    if item[:extension] == "haml"
+      layout 'default'
+    end
   end
 end
 
@@ -52,6 +54,8 @@ end
 route '*' do
   if item.raw_filename && item.raw_filename.end_with?('CNAME')
     '/CNAME'
+  elsif item[:extension] == "xml.haml"
+    item.identifier.chop + '.' + "xml"
   elsif item.binary? || item[:extension] == "html"
     item.identifier.chop + '.' + item[:extension]
   else
