@@ -1,6 +1,6 @@
 !!! 5
 - @lang = ( @item[:lang] || 'en').to_sym
-- @description = @site.config[:description][@lang].gsub(/\n/, '')
+- @description = @item[:description] || @site.config[:description][@lang].gsub(/\n/, '')
 - @locale     = @lang == :ja ? 'ja_JP' : 'en_US'
 - @alt_locale = @lang != :ja ? 'ja_JP' : 'en_US'
 - @title = @item[:title] ? "#{@item[:title]} - #{@site.config[:title]}" : @site.config[:title]
@@ -34,7 +34,7 @@
     %script{:type => "text/javascript", :src => "/javascripts/jquery.js"}
     %script{:type => "text/javascript", :src => "/javascripts/bootstrap.js"}
     %script{:type => "text/javascript", :src => "/javascripts/app.js"}
-  %body
+  %body{ :class => @item[:layout] }
     = fb_root(@locale)
     #main
       = yield
@@ -52,6 +52,9 @@
                 %em English
               %li.ja
                 %a{:href => @item[:alt_lang]} 日本語
+        - if @item[:layout] == 'product'
+          %p.brand
+            = link_to('LittleApps Inc.', 'http://littleapps.jp/')
         %address
           Copyright &copy; #{Time.now.year}
           = link_to('LittleApps Inc.', 'http://littleapps.jp/')

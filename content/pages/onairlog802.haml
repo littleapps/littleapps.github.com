@@ -1,0 +1,37 @@
+---
+layout: product
+lang: ja
+title: OnAirLog802
+appid: 423580398
+description: "iOS 用、楽曲検索アプリ。東京の FM 局・FM 802 で放送された楽曲を検索できます。"
+---
+
+%header.product
+  .container
+    %img.appicon{ :src => '/images/products/oalog802.png', :width => 170, :height => 170 }
+    %h1#brand OnAirLog802
+    %p#appstore
+      = link_to('Available on the Mac App Store', 'http://itunes.apple.com/jp/app/onairlog802/id423580398?mt=8', :class => 'appstore')
+
+#about
+  .container
+    :markdown
+      このソフトウェアは、大阪の FM 局・[FM 802](http://funky802.com/) で放送された楽曲を検索できます。
+  
+      現在放送されている曲もリアルタイムで更新され、過去に放送された曲も、過去 ( 2011/02/05 まで ) にさかのぼって検索できます。
+  
+      iTunes Store で販売されている楽曲は、視聴 / 購入ができます。
+  
+      ブックマーク機能があるので、後でまとめて 視聴 / 購入 もできます。
+
+#screen
+  .container
+    .row
+      .span6
+        %img{ src: '/images/products/oalog-screen1.jpg' }
+      .span6
+        %img{ src: '/images/products/oalog-screen2.jpg' }
+    
+#social
+  .container
+    = fb_likebutton('http://littleapps.jp/pages/onairlog802/')

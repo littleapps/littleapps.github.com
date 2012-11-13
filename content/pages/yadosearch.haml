@@ -1,0 +1,58 @@
+---
+layout: product
+lang: ja
+title: 宿さがし
+appid: 347959354
+description: "iOS 用、宿検索アプリ。旅先や終電を逃したときなど、その場で宿を探せます。"
+---
+
+%header.product
+  .container
+    %img.appicon{ :src => '/images/products/yadosearch.png', :width => 170, :height => 170 }
+    %h1#brand 宿さがし
+    %h2#subtitle
+      iOS 用、宿検索アプリ。
+      %br 旅先や終電を逃したときなど、その場で宿を探せます。
+    %p#appstore
+      = link_to('Available on the Mac App Store', 'http://itunes.apple.com/jp/app/id347959354?mt=8', :class => 'appstore')
+
+#about
+  .container
+    :markdown
+    
+      このソフトウェアは、以下のウェブサービスを利用しています。
+
+       * [じゃらんウェブサービス 宿検索API](http://jws.jalan.net/)
+       * [楽天ウェブサービス トラベル系API](http://webservice.rakuten.co.jp/)
+      
+      以下の方法で検索できます。
+      
+       * 宿の名前から検索
+       * 路線（地域-路線-駅）から検索
+       * 現在の場所から検索
+       * スポット名称（地域-都道府県-大エリア-スポット名称）から検索
+       * エリア（地域-都道府県-大エリア-小エリア）から検索
+
+      泊まりたい宿が見つかったら、iPhone / iPad でそのまま予約、もしくは、共有機能を使って、後で Mac / PC を使い、比較しながら予約もできます。
+      
+      共有機能は以下のサービスをサポートしています。
+      
+       * Delicious
+       * Evernote
+       * Facebook
+       * Twitter
+       * Google Reader
+       * Instapaper
+       * Tumblr
+
+#screen
+  .container
+    .row
+      .span6
+        %img{ src: '/images/products/yadosearch-screen1.jpg' }
+      .span6
+        %img{ src: '/images/products/yadosearch-screen2.jpg' }
+    
+#social
+  .container
+    = fb_likebutton('http://littleapps.jp/pages/yadosearch/')
