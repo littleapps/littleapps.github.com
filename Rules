@@ -5,7 +5,9 @@ require 'coffee-script'
 Compass.add_project_configuration('config.rb')
 
 compile '/stylesheets/*/' do
-  filter :sass, Compass.sass_engine_options
+  if item[:extension] == "sass"
+    filter :sass, Compass.sass_engine_options
+  end
 end
 
 compile '/stylesheets/_*/' do

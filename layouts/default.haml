@@ -13,7 +13,7 @@
 - @og[:updated_time] ||= Time.now.nsec
 - @article = { author: 'http://ngs.io/', published_time: 1351734903170, modified_time: Time.now.nsec }
 -
-%html{:lang => @lang, :prefix => "og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#"}
+%html{:lang => @lang, :prefix => "og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article# website: http://ogp.me/ns/website#"}
   %head
     %meta{:charset =>"utf-8"}
     %meta{:name =>"generator", :content =>"nanoc 3.1.7"}
