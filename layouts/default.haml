@@ -27,13 +27,15 @@
     #{ og_tag(@article, :article) }
     %link{:rel =>"stylesheet", :type => "text/css", :href =>"/stylesheets/bootstrap.css", :media =>"screen"}
     %link{:rel =>"stylesheet", :type => "text/css", :href =>"/stylesheets/screen.css", :media =>"screen"}
-    %link{:rel =>"stylesheet", :type => "text/css", :href =>"//fonts.googleapis.com/css?family=Raleway:400,700", :media =>"screen"}
     %link{:rel => "shortcut icon", :type => "image/x-icon", :href => "//littleapps.s3.amazonaws.com/favicon.ico"}
     - %w{icon icon-72x72 icon-114x114 icon-144x144}.each do |size|
       %link{:rel =>"apple-touch-icon-precomposed", :type =>"image/png", :href =>"//littleapps.s3.amazonaws.com/apple-touch-#{size}-precomposed.png"}
     %script{:type => "text/javascript", :src => "/javascripts/jquery.js"}
     %script{:type => "text/javascript", :src => "/javascripts/bootstrap.js"}
     %script{:type => "text/javascript", :src => "/javascripts/app.js"}
+    %script{:type => "text/javascript", :src => "//use.typekit.net/ixq2rgu.js"}
+    :javascript
+      try{Typekit.load();}catch(e){}
   %body{ :class => @item[:layout] }
     = fb_root(@locale)
     #main
