@@ -14,12 +14,11 @@ task :travis do
     git config user.email '#{ENV['GIT_EMAIL']}'
     git config credential.helper "store --file=#{ENV['HOME']}/.gitcredentials"
     git config push.default matching
+    git branch #{deploy_branch} https/#{deploy_branch}
   COMMAND
   File.open("#{ENV['HOME']}/.gitcredentials", 'w') do |f|
     f.write("https://#{ENV['GH_TOKEN']}:@github.com")
   end
-  system "git branch #{deploy_branch} https/#{deploy_branch}"
-  system 'cd ../'
   system "bundle exec nanoc compile && cd public && git add -A && git commit -m 'Update from travis-ci' && git push https #{deploy_branch} && cd ../"
   File.delete "#{ENV['HOME']}/.gitcredentials"
 end
