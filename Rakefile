@@ -2,7 +2,7 @@ require 'nanoc3/tasks'
 
 desc 'Generate site from Travis CI and publish site to GitHub Pages'
 task :travis do
-  repo = %x(git config remote.origin.url).gsub(/^git@/, 'https://').gsub(/^git:/, 'https:')
+  repo = %x(git config remote.origin.url).gsub(/^git@github.com:/, 'https://github.com/').gsub(/^git:/, 'https:')
   deploy_branch = 'gh-pages'
   if repo.match(/github\.com\.git$/)
     deploy_branch = 'master'
