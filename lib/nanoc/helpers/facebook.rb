@@ -1,7 +1,7 @@
 module Nanoc::Helpers
 
   module Facebook
-    
+
     def fb_root( locale = 'en_US' )
       <<-HTML
 <div id="fb-root"></div>
@@ -9,7 +9,7 @@ module Nanoc::Helpers
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/#{locale}/all.js#xfbml=1&appId=482135611804259";
+  js.src = "//connect.facebook.net/#{locale}/all.js#xfbml=1&appId=508850452467479";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
       HTML
@@ -21,4 +21,4 @@ module Nanoc::Helpers
 
   end
 end
-    
+

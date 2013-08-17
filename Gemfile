@@ -1,6 +1,7 @@
-source :rubygems
+source 'https://rubygems.org'
 
 gem 'rack'
+gem 'travis'
 
 group :development do
   gem 'adsf'

@@ -23,7 +23,7 @@
       %meta{:name =>"apple-itunes-app", :content => "app-id=#{@item[:appid]}" }
     %title= @title
     #{ og_tag(@og) }
-    #{ og_tag(@fb) }
+    #{ og_tag(@fb, 'fb') }
     #{ og_tag(@article, :article) }
     %link{:rel =>"stylesheet", :type => "text/css", :href =>"/stylesheets/bootstrap.css", :media =>"screen"}
     %link{:rel =>"stylesheet", :type => "text/css", :href =>"/stylesheets/screen.css", :media =>"screen"}
@@ -36,6 +36,7 @@
     %script{:type => "text/javascript", :src => "//use.typekit.net/ixq2rgu.js"}
     :javascript
       try{Typekit.load();}catch(e){}
+
   %body{ :class => @item[:layout] }
     = fb_root(@locale)
     #main
