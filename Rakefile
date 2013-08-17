@@ -2,14 +2,7 @@ require 'nanoc3/tasks'
 
 desc 'Generate site from Travis CI and publish site to GitHub Pages'
 task :travis do
-  # if this is a pull request, do a simple build of the site and stop
-  if ENV['TRAVIS_PULL_REQUEST'].to_s.to_i > 0
-    puts 'Pull request detected. Executing build only.'
-    system 'bundle exec awestruct -P production -g'
-    next
-  end
-
-  repo = %x(git config remote.origin.url).gsub(/^git:/, 'https:')
+  repo = %x(git config remote.origin.url).gsub(/^git@/, 'https://').gsub(/^git:/, 'https:')
   deploy_branch = 'gh-pages'
   if repo.match(/github\.com\.git$/)
     deploy_branch = 'master'
@@ -24,7 +17,7 @@ task :travis do
     f.write("https://#{ENV['GH_TOKEN']}:@github.com")
   end
   system "git branch #{deploy_branch} origin/#{deploy_branch}"
-  system 'bundle exec awestruct -P production -g --deploy'
+  system 'bundle exec nanoc compile && cd public && git add -Am "Update from travis-ci"'
   File.delete '.git/credentials'
 end
 

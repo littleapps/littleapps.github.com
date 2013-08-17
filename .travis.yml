@@ -1,3 +1,8 @@
 env:
   global:
     secure: "gjnoyMpBDngVJJQTA5XrzKA6mbJ9KP2eHUUHaNI9gAJBx0Olx30RlL10yZHZ7Msj/Boj1cEuhf49Clx12CVv66ar44Yj1ZWhGq5mRBJIkhwAGxxID32QJ36ln0ei+KnOwySSIEvalb2FOmcTZXnXpC0VlEgu0xz6d2/LXvKaTyA="
+notifications:
+  email:
+    - "atsn.ngs+travisci@gmail.com"
+
+

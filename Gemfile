@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rack'
 gem 'travis'
+gem 'awestruct'
 
 group :development do
   gem 'adsf'
