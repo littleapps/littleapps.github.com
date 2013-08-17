@@ -7,17 +7,19 @@ task :travis do
   if repo.match(/github\.com\.git$/)
     deploy_branch = 'master'
   end
-  system "git remote add https #{repo}"
-  system 'git fetch -q'
-  system "git config --global user.name '#{ENV['GIT_NAME']}'"
-  system "git config --global user.email '#{ENV['GIT_EMAIL']}'"
-  system 'git config --global credential.helper "store --file=.git/credentials"'
-  system 'git config --global push.default matching'
+  system <<-COMMAND
+    cd public && rm -rf *
+    git remote add https #{repo}
+    git config user.name '#{ENV['GIT_NAME']}'
+    git config user.email '#{ENV['GIT_EMAIL']}'
+    git config credential.helper "store --file=.git/credentials"
+    git config push.default matching
+  COMMAND
   File.open('.git/credentials', 'w') do |f|
     f.write("https://#{ENV['GH_TOKEN']}:@github.com")
   end
   system "git branch #{deploy_branch} https/#{deploy_branch}"
-  system 'cd public && rm -rf * && cd ../'
+  system 'cd ../'
   system "bundle exec nanoc compile && cd public && git add -A && git commit -m 'Update from travis-ci' && git push https #{deploy_branch} && cd ../"
   File.delete '.git/credentials'
 end
