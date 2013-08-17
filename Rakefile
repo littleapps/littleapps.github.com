@@ -12,16 +12,16 @@ task :travis do
     git remote add https #{repo}
     git config user.name '#{ENV['GIT_NAME']}'
     git config user.email '#{ENV['GIT_EMAIL']}'
-    git config credential.helper "store --file=.git/credentials"
+    git config credential.helper "store --file=#{ENV['HOME']}/.gitcredentials"
     git config push.default matching
   COMMAND
-  File.open('.git/credentials', 'w') do |f|
+  File.open("#{ENV['HOME']}/.gitcredentials", 'w') do |f|
     f.write("https://#{ENV['GH_TOKEN']}:@github.com")
   end
   system "git branch #{deploy_branch} https/#{deploy_branch}"
   system 'cd ../'
   system "bundle exec nanoc compile && cd public && git add -A && git commit -m 'Update from travis-ci' && git push https #{deploy_branch} && cd ../"
-  File.delete '.git/credentials'
+  File.delete "#{ENV['HOME']}/.gitcredentials"
 end
 
 task :default => [:travis]
