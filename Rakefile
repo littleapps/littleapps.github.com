@@ -18,7 +18,7 @@ task :travis do
   end
   system "git branch #{deploy_branch} origin/#{deploy_branch}"
   system 'cd public && rm -rf * && cd ../'
-  system "bundle exec nanoc compile && cd public && git add -A && git commit -m "Update from travis-ci" && git push http #{deploy_branch} && cd ../"
+  system "bundle exec nanoc compile && cd public && git add -A && git commit -m 'Update from travis-ci' && git push http #{deploy_branch} && cd ../"
   File.delete '.git/credentials'
 end
 
