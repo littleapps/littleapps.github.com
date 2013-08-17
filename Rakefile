@@ -14,7 +14,7 @@ task :travis do
     git config user.email '#{ENV['GIT_EMAIL']}'
     git config credential.helper "store --file=#{ENV['HOME']}/.gitcredentials"
     git config push.default matching
-    git branch #{deploy_branch} https/#{deploy_branch}
+    git checkout #{deploy_branch}
   COMMAND
   File.open("#{ENV['HOME']}/.gitcredentials", 'w') do |f|
     f.write("https://#{ENV['GH_TOKEN']}:@github.com")
