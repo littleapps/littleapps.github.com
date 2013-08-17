@@ -28,4 +28,4 @@ task :travis do
   File.delete '.git/credentials'
 end
 
-
+task :default => [:travis]
