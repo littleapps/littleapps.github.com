@@ -4,5 +4,8 @@ env:
 notifications:
   email:
     - "atsn.ngs+travisci@gmail.com"
+branches:
+  only:
+    - source
 
 
