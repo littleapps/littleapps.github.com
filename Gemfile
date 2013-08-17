@@ -4,7 +4,7 @@ gem 'rack'
 gem 'travis'
 gem 'awestruct'
 
-group :development do
+group :development, :deployment do
   gem 'adsf'
   gem 'albino'
   gem 'bluecloth'
