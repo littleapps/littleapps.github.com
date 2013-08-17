@@ -13,6 +13,7 @@ task :travis do
   system "git config --global user.name '#{ENV['GIT_NAME']}'"
   system "git config --global user.email '#{ENV['GIT_EMAIL']}'"
   system 'git config --global credential.helper "store --file=.git/credentials"'
+  system 'git config --global push.default matching'
   File.open('.git/credentials', 'w') do |f|
     f.write("https://#{ENV['GH_TOKEN']}:@github.com")
   end
