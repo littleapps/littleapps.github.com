@@ -7,8 +7,7 @@ task :travis do
   if repo.match(/github\.com\.git$/)
     deploy_branch = 'master'
   end
-  system "git remote set-url --push origin #{repo}"
-  system "git remote set-branches --add origin #{deploy_branch}"
+  system "git remote set-url origin #{repo}"
   system 'git fetch -q'
   system "git config --global user.name '#{ENV['GIT_NAME']}'"
   system "git config --global user.email '#{ENV['GIT_EMAIL']}'"
