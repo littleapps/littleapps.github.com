@@ -7,7 +7,7 @@ task :travis do
   if repo.match(/github\.com\.git$/)
     deploy_branch = 'master'
   end
-  system "git remote set-url origin #{repo}"
+  system "git remote add https #{repo}"
   system 'git fetch -q'
   system "git config --global user.name '#{ENV['GIT_NAME']}'"
   system "git config --global user.email '#{ENV['GIT_EMAIL']}'"
@@ -18,7 +18,7 @@ task :travis do
   end
   system "git branch #{deploy_branch} origin/#{deploy_branch}"
   system 'cd public && rm -rf * && cd ../'
-  system 'bundle exec nanoc compile && cd public && git add -A && git commit -m "Update from travis-ci" && git push && cd ../'
+  system "bundle exec nanoc compile && cd public && git add -A && git commit -m "Update from travis-ci" && git push http #{deploy_branch} && cd ../"
   File.delete '.git/credentials'
 end
 
