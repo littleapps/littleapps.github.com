@@ -1,0 +1,67 @@
+doctype 5
+html lang=lang prefix=("og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article# website: http://ogp.me/ns/website#")
+  head
+    meta charset="utf-8"
+    meta name="generator" content=("nanoc 3.1.7")
+    meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1'
+    - if current_page.data.description
+      meta content=current_page.data.description name="description"
+    - else
+      meta content=t('blog.description') name="description"
+    - if current_page.data.keywords
+      meta content=current_page.data.page.keywords name="keywords"
+    - if current_page.data.app_id
+      meta name="apple-itunes-app" content=("app-id=#{current_resource.data['app_id']}" )
+    title= @title
+    - ogp_tags do|name, value|
+      meta property=name content=value
+    - if current_resource.data.alternate
+      meta content=alt_lang property="og:locale:alternate"
+      link rel="alternate" hreflang=alt_lang herf=alt_href
+    meta content=lang property="og:locale"
+    - %w{152 144 120 114 76 72 60 67}.each do |size|#
+      - size = "#{size}x#{size}"
+      link rel="apple-touch-icon" size=size href="/apple-touch-icon-#{size}-precomposed.png"
+    link rel="apple-touch-icon" href="/apple-touch-icon-precomposed.png"
+    link rel="shortcut icon" href="/favicon.png"
+    link rel="icon" type="image/ico" href="/favicon.ico"
+    = stylesheet_link_tag 'application'
+    = javascript_include_tag 'application'
+    script type="text/javascript" src="//use.typekit.net/ixq2rgu.js"
+    javascript:
+      try{Typekit.load();}catch(e){}
+
+  body class=current_resource.data.layout
+    #fb-root
+    javascript:
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/#{ lang }/all.js#appId=#{ data.ogp.fb.app_id }&xfbml=1";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    #main
+      = yield
+    footer
+      .container
+        - if current_resource.data.alternate
+          ul#locales
+            - if I18n.locale.to_s == 'ja'
+              li.en
+                a href=current_resource.url.sub(%r{^/ja}, '') English
+              li.ja
+                em 日本語
+            - else
+              li.en
+                em English
+              li.ja
+                a href="/ja#{current_resource.url}" 日本語
+        - if current_resource.data.layout == 'product'
+          p.brand
+            = link_to('LittleApps Inc.', 'http://littleapps.jp/')
+        address
+          | Copyright &copy; #{Time.now.year}
+          = link_to('LittleApps Inc.', 'http://littleapps.jp/')
+          | All rights reserved.
+    = google_analytics_universal_tag

@@ -1,0 +1,52 @@
+---
+layout: page
+alternate: true
+---
+
+#products
+  .container
+    section.product.row
+      .span2
+        = link_to 'http://everdesktop.com/' do
+          = image_tag '/images/everdesktop.png', class: 'pic'
+      .span2
+        = link_to 'http://igistapp.com/' do
+          = image_tag '/images/igist.png', class: 'pic appicon'
+      .span2
+        = link_to '/ibacklog/' do
+          = image_tag '/images/ibacklog.png', class: 'pic appicon'
+      .span2
+        = link_to '/yadosearch/' do
+          = image_tag '/images/yadosearch.png', class: 'pic appicon'
+      .span2
+        = link_to '/onairlog813/' do
+          = image_tag '/images/oalog813.png', class: 'pic appicon'
+      .span2
+        = link_to '/onairlog802/' do
+          = image_tag '/images/oalog802.png', class: 'pic appicon'
+    section.product.row
+      .span2
+        = link_to 'http://ngs.github.com/codaplugins/' do
+          = image_tag '/images/codaplugin.png', class: 'pic'
+      .span2
+        = link_to 'http://ngs.github.com/lleval-safarix/' do
+          = image_tag '/images/llevalsafarix.png', class: 'pic rouonded'
+      .span2
+        = link_to 'http://code.google.com/p/noawidget/' do
+          = image_tag '/images/noawidget.png', class: 'pic'
+      .span2
+        = link_to 'https://play.google.com/store/apps/details?id=org.ngsdev.android.nowOnAir' do
+          = image_tag '/images/noawidget-android.png', class: 'pic rouonded'
+      .span2
+        = link_to 'http://code.google.com/p/abroadair/' do
+          = image_tag '/images/abroadair.png', class: 'pic'
+      .span2
+        = link_to 'http://code.google.com/p/abroadwidget/' do
+          = image_tag '/images/abroadwidget.png', class: 'pic'
+    section.product.row
+      .span2
+        = link_to 'https://play.google.com/store/apps/details?id=org.ngsdev.yadoroid' do
+          = image_tag '/images/yadoroid.png', class: 'pic'
+#social
+  .container
+    / = fb_likebutton("https://www.facebook.com/littleapps.jp", 300)

@@ -74,6 +74,9 @@ configure :build do
       { icon: "favicon.ico", size: "64x64,32x32,24x24,16x16" }
     ]
   }
+  activate :google_analytics do |ga|
+    ga.tracking_id = 'UA-200187-25'
+  end
 end
 
 activate :deploy do |deploy|
@@ -84,20 +87,33 @@ end
 
 helpers do
 
+  def en?
+    I18n.locale.to_s == 'en'
+  end
+
+  def lang
+    en? ? 'en_US' : 'ja_JP'
+  end
+
+
+  def base_path
+    en? ? "/" : "/ja/"
+  end
+
   def alt_lang
-    I18n.locale.to_s == 'en' ? "ja_JP" : "en_US"
+    en? ? "ja_JP" : "en_US"
   end
 
   def alt_lang_name
-    I18n.locale.to_s == 'en' ? "日本語" : "English"
+    en? ? "日本語" : "English"
   end
 
   def alt_base
-    I18n.locale.to_s == 'en' ? "littleapps.jp/ja/" : "littleapps.jp/"
+    I18n.locale.to_s == 'en' ? "littleapps.jp/ja" : "littleapps.jp"
   end
 
   def alt_href
-    "http://#{alt_host}#{current_resource.url}"
+    "http://#{alt_base}#{current_resource.url.sub(%r{^/ja/}, '/')}"
   end
 
 end
