@@ -1,0 +1,47 @@
+---
+layout: product
+locale: ja
+title: iBacklog
+appid: 396109051
+description: "バージョン管理 ASP、バックログのクライアントアプリケーション。どこでもバックログの課題がチェックできます。"
+ogp:
+  og:
+    image:
+      '': 'http://littleapps.s3.amazonaws.com/images/ibacklog.png'
+      secure_url: 'https://littleapps.s3.amazonaws.com/images/ibacklog.png'
+      width: 512
+      height: 512
+    url: 'http://littleapps.jp/pages/ibacklog'
+    type: product
+---
+
+header.product
+  .container
+    = image_tag 'ibacklog.png', :width => 170, :height => 170, :class => 'appicon'
+    h1#brand iBacklog
+    h2#subtitle バージョン管理 ASP、バックログのクライアントアプリケーション。
+    p#appstore
+      = link_to('Available on the Mac App Store', 'http://itunes.apple.com/jp/app/ibacklog/id396109051?mt=8', :class => 'appstore')
+
+#about
+  .container
+    markdown:
+
+      このソフトウェアは以下の機能を提供します
+
+       * 課題の一覧、閲覧、編集
+       * コメントの投稿
+       * 複数スペースに対応
+
+      不具合やご要望などは以下のバックログ プロジェクトに是非 課題を追加して下さい。テスト投稿もOKです。
+
+      [https://ibacklog.backlog.jp/projects/IBLG](https://ibacklog.backlog.jp/projects/IBLG) ( ID/Pass : guest / guest )
+
+#screen
+  .container
+    .row
+      .span2= image_tag 'ibacklog-screen1.jpg'
+      .span2= image_tag 'ibacklog-screen2.jpg'
+      .span2= image_tag 'ibacklog-screen3.jpg'
+      .span2= image_tag 'ibacklog-screen4.jpg'
+      .span2= image_tag 'ibacklog-screen5.jpg'

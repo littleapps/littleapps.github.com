@@ -5,3 +5,6 @@ tmp/*
 .sass-cache
 *.swp
 .awestruct
+.bundle
+.env
+build
