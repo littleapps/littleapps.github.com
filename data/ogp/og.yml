@@ -1,0 +1,8 @@
+title: LittleApps Inc.
+site_name: LittleApps Inc.
+type: website
+image:
+  '': 'http://littleapps.s3.amazonaws.com/images/og.png'
+  width: 500
+  height: 100
+  type: image/png
