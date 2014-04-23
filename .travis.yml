@@ -4,6 +4,9 @@ rvm:
   - 2.0.0
 cache: bundler
 script: bundle exec middleman build
+branches:
+  only:
+    - source
 env:
   global:
     - GIT_COMMITTER_NAME='ngs@travis-ci'
@@ -12,5 +15,5 @@ env:
     - GIT_AUTHOR_EMAIL='a+travis@ngs.io'
     - secure: "KmzEfaZsKFc2vUvk9CarCvuAr5VrxoKQkxylhD9C2yRFAghWhyFZ7qkiAOvmAfiRt7M+/3RkHoRHp9qWZOt4oMi27iGhHWnTKIr2Oo3yCToXXqlpKPXrFqhuiJ8VuXSz8uTud+TsdhjpSMvPzfit2/+2OSxrO48Yq7STnsH+nHs="
 after_success:
-  - '[ "$TRAVIS_BRANCH" == "master" ] && [ $GH_TOKEN ] && bundle exec middleman deploy >/dev/null 2>&1'
+  - '[ $GH_TOKEN ] && bundle exec middleman deploy >/dev/null 2>&1'
 
