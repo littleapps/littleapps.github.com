@@ -84,7 +84,7 @@ end
 activate :deploy do |deploy|
   deploy.method = :git
   deploy.branch = 'master'
-  deploy.remote = "https://#{ENV['GH_TOKEN']}@github.com/littleapps/littleapps.github.com.git"
+  deploy.remote = "https://#{ENV['GH_TOKEN']}@github.com/littleapps/littleapps.github.io.git"
 end
 
 helpers do
