@@ -1,9 +1,0 @@
-- company = @item.identifier.end_with?('/company/')
-%header
-  .container
-    %h1#brand= link_to(@site.config[:title], @site.config[:url])
-    %ul.nav-pills.nav
-      %li{ :class => company ? nil : 'active' }
-        = link_to '製品', '/ja/'
-      %li{ :class => company ? 'active' : nil }
-        = link_to '会社概要', '/ja/company/'

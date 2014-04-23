@@ -1,11 +1,16 @@
+---
+language: ruby
+rvm:
+  - 2.0.0
+cache: bundler
+script: bundle exec middleman build
 env:
   global:
-    secure: "gjnoyMpBDngVJJQTA5XrzKA6mbJ9KP2eHUUHaNI9gAJBx0Olx30RlL10yZHZ7Msj/Boj1cEuhf49Clx12CVv66ar44Yj1ZWhGq5mRBJIkhwAGxxID32QJ36ln0ei+KnOwySSIEvalb2FOmcTZXnXpC0VlEgu0xz6d2/LXvKaTyA="
-notifications:
-  email:
-    - "atsn.ngs+travisci@gmail.com"
-branches:
-  only:
-    - source
-
+    - GIT_COMMITTER_NAME='ngs@travis-ci'
+    - GIT_COMMITTER_EMAIL='a+travis@ngs.io'
+    - GIT_AUTHOR_NAME='ngs@travis-ci'
+    - GIT_AUTHOR_EMAIL='a+travis@ngs.io'
+    - secure: "KmzEfaZsKFc2vUvk9CarCvuAr5VrxoKQkxylhD9C2yRFAghWhyFZ7qkiAOvmAfiRt7M+/3RkHoRHp9qWZOt4oMi27iGhHWnTKIr2Oo3yCToXXqlpKPXrFqhuiJ8VuXSz8uTud+TsdhjpSMvPzfit2/+2OSxrO48Yq7STnsH+nHs="
+after_success:
+  - '[ "$TRAVIS_BRANCH" == "master" ] && [ $GH_TOKEN ] && bundle exec middleman deploy >/dev/null 2>&1'
 

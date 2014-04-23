@@ -1,0 +1,41 @@
+---
+locale: ja
+layout: product
+title: OnAirLog813
+appid: 416761694
+description: "iOS 用、楽曲検索アプリ。東京の FM 局・J-WAVE で放送された楽曲を検索できます。"
+#"
+ogp:
+  og:
+    image:
+      '': 'http://littleapps.s3.amazonaws.com/images/oalog813.png'
+      secure_url: 'https://littleapps.s3.amazonaws.com/images/oalog813.png'
+      width: 512
+      height: 512
+    url: 'http://littleapps.jp/pages/onairlog813'
+    type: product
+---
+
+header.product
+  .container
+    = image_tag 'oalog813.png', :width => 170, :height => 170, :class => 'appicon'
+    h1#brand OnAirLog813
+    p#appstore
+      = link_to('Available on the Mac App Store', 'http://itunes.apple.com/jp/app/onairlog813/id416761694?mt=8', :class => 'appstore')
+
+#about
+  .container
+    markdown:
+      このソフトウェアは、東京の FM 局・[J-WAVE](http://www.j-wave.co.jp/) で放送された楽曲を検索できます。
+
+      現在放送されている曲もリアルタイムで更新され、過去に放送された曲も、過去 ( 2010/11/03 まで ) にさかのぼって検索できます。
+
+      iTunes Store で販売されている楽曲は、視聴 / 購入ができます。
+
+      ブックマーク機能があるので、後でまとめて 視聴 / 購入 もできます。
+
+#screen
+  .container
+    .row
+      .span6= image_tag 'oalog-screen1.jpg'
+      .span6= image_tag 'oalog-screen2.jpg'
