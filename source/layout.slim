@@ -12,7 +12,12 @@ html lang=lang prefix=("og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: 
       meta content=current_page.data.page.keywords name="keywords"
     - if current_page.data.app_id
       meta name="apple-itunes-app" content=("app-id=#{current_resource.data['app_id']}" )
-    title= @title
+    title
+      - if current_resource.data.title
+        = "#{current_resource.data.title} - "
+      - elsif content_for?(:title)
+        = "#{yield_content(:title)} - "
+      | LittleApps Inc.
     - ogp_tags do|name, value|
       meta property=name content=value
     - if current_resource.data.alternate
