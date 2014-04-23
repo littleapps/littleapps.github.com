@@ -90,6 +90,7 @@ end
 helpers do
 
   def en?
+    I18n.locale = current_resource.data.locale if current_resource.data.locale
     I18n.locale.to_s == 'en'
   end
 

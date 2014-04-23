@@ -8,45 +8,47 @@ alternate: true
     section.product.row
       .span2
         = link_to 'http://everdesktop.com/' do
-          = image_tag '/images/everdesktop.png', class: 'pic'
+          = image_tag 'everdesktop.png', class: 'pic'
       .span2
         = link_to 'http://igistapp.com/' do
-          = image_tag '/images/igist.png', class: 'pic appicon'
+          = image_tag 'igist.png', class: 'pic appicon'
       .span2
         = link_to '/ibacklog/' do
-          = image_tag '/images/ibacklog.png', class: 'pic appicon'
+          = image_tag 'ibacklog.png', class: 'pic appicon'
       .span2
         = link_to '/yadosearch/' do
-          = image_tag '/images/yadosearch.png', class: 'pic appicon'
+          = image_tag 'yadosearch.png', class: 'pic appicon'
       .span2
         = link_to '/onairlog813/' do
-          = image_tag '/images/oalog813.png', class: 'pic appicon'
+          = image_tag 'oalog813.png', class: 'pic appicon'
       .span2
         = link_to '/onairlog802/' do
-          = image_tag '/images/oalog802.png', class: 'pic appicon'
+          = image_tag 'oalog802.png', class: 'pic appicon'
     section.product.row
       .span2
         = link_to 'http://ngs.github.com/codaplugins/' do
-          = image_tag '/images/codaplugin.png', class: 'pic'
+          = image_tag 'codaplugin.png', class: 'pic'
       .span2
         = link_to 'http://ngs.github.com/lleval-safarix/' do
-          = image_tag '/images/llevalsafarix.png', class: 'pic rouonded'
+          = image_tag 'llevalsafarix.png', class: 'pic rouonded'
       .span2
         = link_to 'http://code.google.com/p/noawidget/' do
-          = image_tag '/images/noawidget.png', class: 'pic'
+          = image_tag 'noawidget.png', class: 'pic'
       .span2
         = link_to 'https://play.google.com/store/apps/details?id=org.ngsdev.android.nowOnAir' do
-          = image_tag '/images/noawidget-android.png', class: 'pic rouonded'
+          = image_tag 'noawidget-android.png', class: 'pic rouonded'
       .span2
         = link_to 'http://code.google.com/p/abroadair/' do
-          = image_tag '/images/abroadair.png', class: 'pic'
+          = image_tag 'abroadair.png', class: 'pic'
       .span2
         = link_to 'http://code.google.com/p/abroadwidget/' do
-          = image_tag '/images/abroadwidget.png', class: 'pic'
+          = image_tag 'abroadwidget.png', class: 'pic'
     section.product.row
       .span2
         = link_to 'https://play.google.com/store/apps/details?id=org.ngsdev.yadoroid' do
-          = image_tag '/images/yadoroid.png', class: 'pic'
+          = image_tag 'yadoroid.png', class: 'pic'
+    / = fb_likebutton("", 300)
 #social
   .container
-    / = fb_likebutton("https://www.facebook.com/littleapps.jp", 300)
+    .fb-like data-send='true' data-width='300' data-show-faces='false' data-href='https://www.facebook.com/littleapps.jp'
+
