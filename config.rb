@@ -8,6 +8,8 @@ activate :livereload
 
 page "/sitemap.xml", layout: false
 page "/404.html",    directory_index: false
+page "/y_key_eeab6a97b2faf124.html", directory_index: false, layout: false
+page "/googled8d3144649a51e05.html", directory_index: false, layout: false
 
 require 'slim'
 require 'sass'
