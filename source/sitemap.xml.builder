@@ -1,10 +1,13 @@
 xml.instruct!
 xml.urlset 'xmlns' => "http://www.sitemaps.org/schemas/sitemap/0.9" do
-  site_url = t 'blog.url'
-  xml.url do
-    xml.loc site_url
-    xml.lastmod blog.articles.first.date.to_time.iso8601
-    xml.changefreq "daily"
-    xml.priority "1.0"
+  sitemap.resources.each do|res|
+    if res.ext == '.html'
+      xml.url do
+        xml.loc "http://littleapps.jp#{ res.url }"
+        xml.lastmod Time.now.utc.iso8601
+        xml.changefreq "monthly"
+        xml.priority "0.5"
+      end
+    end
   end
 end
