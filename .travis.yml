@@ -16,4 +16,10 @@ env:
     - secure: "KmzEfaZsKFc2vUvk9CarCvuAr5VrxoKQkxylhD9C2yRFAghWhyFZ7qkiAOvmAfiRt7M+/3RkHoRHp9qWZOt4oMi27iGhHWnTKIr2Oo3yCToXXqlpKPXrFqhuiJ8VuXSz8uTud+TsdhjpSMvPzfit2/+2OSxrO48Yq7STnsH+nHs="
 after_success:
   - '[ $GH_TOKEN ] && bundle exec middleman deploy >/dev/null 2>&1'
+notifications:
+  on_success: always
+  on_failure: always
+  on_start: always
+  webhooks:
+    - 'http://ngs-hubot.herokuapp.com/travisci/hooks'
 
