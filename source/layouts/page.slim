@@ -1,10 +1,11 @@
 - company = current_resource.url.end_with? '/company/'
+- products = current_resource.url.end_with? '/products/'
 - wrap_layout :layout do
   header
     .container
       h1#brand= link_to(data.ogp.og.title, base_path)
       ul.nav-pills.nav
-        li class=(company ? nil : 'active' )
+        li class=(products ? 'active' : nil )
           = link_to t(:products), base_path
         li class=(company ? 'active' : nil )
           = link_to t(:company), "#{base_path}company/"
