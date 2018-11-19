@@ -1,3 +1,7 @@
+---
+layout: page
+---
+
 # Privacy Policy
 
 Effective date: November 18, 2018
